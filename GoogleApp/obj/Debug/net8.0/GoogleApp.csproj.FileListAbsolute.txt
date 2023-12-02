@@ -1,0 +1,15 @@
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\bin\Debug\net8.0\GoogleApp.exe
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\bin\Debug\net8.0\GoogleApp.deps.json
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\bin\Debug\net8.0\GoogleApp.runtimeconfig.json
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\bin\Debug\net8.0\GoogleApp.dll
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\bin\Debug\net8.0\GoogleApp.pdb
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.AssemblyInfoInputs.cache
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.AssemblyInfo.cs
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.csproj.CoreCompileInputs.cache
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.sourcelink.json
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.dll
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\refint\GoogleApp.dll
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.pdb
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\GoogleApp.genruntimeconfig.cache
+E:\Unity\SourceTree\GoogleAkademi2023\GoogleApp\obj\Debug\net8.0\ref\GoogleApp.dll

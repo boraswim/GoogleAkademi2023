@@ -392,7 +392,7 @@ namespace GoogleApp{
                         int golsayisi = 0;
                         string takimSeviyesi = "";
                         Random sayi = new Random();
-                        golsayisi = sayi.Next(0,6); // 0 ve 5 arası sayılar gelebilir
+                        golsayisi = sayi.Next(0,6);     // 0 ve 5 arası sayılar gelebilir
                         switch(golsayisi)
                         {
                             case 1:

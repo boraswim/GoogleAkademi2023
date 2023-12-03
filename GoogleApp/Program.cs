@@ -1,4 +1,5 @@
 ﻿using System;
+using GoogleApp.Topla;
 namespace GoogleApp{
     class Program{
         static void Main(string[] args)
@@ -31,7 +32,14 @@ namespace GoogleApp{
             13. Math Class
 
             MODUL 6: Mantiksal Operasyonlar
-            14. If- Else- Elseif
+            14. If- Else- Elseif|Else
+            15. Array|Foreach
+            16. Bool|Conditional Operator
+            17. Local ve Global
+            18. Code Blocks
+            19. Switch Case
+            20. For Loop
+            21. Do While- While
 
             99. Cikis
 
@@ -256,13 +264,204 @@ namespace GoogleApp{
                         Console.WriteLine(Math.Pow(bir, iki));  // 100
                         Console.WriteLine(Math.Min(20,10));     // 10
                         Console.WriteLine(Math.Abs(-25.4f));    // 25.4
+                        Console.ReadLine();
                         break;
                     }
 
                     case 14:
                     {
                         // 6. MODÜL: Mantıksal Operasonlar
-                        // If- Else- Elseif 
+                        // If- Else- Elseif|Else
+                        // 20'ye kadar sayı olan bir zar
+                        // 15 ile 20 arasında büyük hasar
+                        // 10 ile 15 arasında orta hasar
+                        // 5 ile 10 arasında hasar yok
+                        // 0 ile 5 arasında oyuncuya hasar
+                        // 4. veya 5. zar 18 veya üstünde gelirse ek hasar vereceğiz
+                        Random zar = new Random();
+                        int birinciAtis = zar.Next(1,21);
+                        int ikinciAtis = zar.Next(1,21);
+                        int ucuncuAtis = zar.Next(1,21);
+                        int dorduncuAtis = zar.Next(1,21);
+                        int besinciAtis = zar.Next(1,21);
+                        
+                        Console.WriteLine(birinciAtis + " " + ikinciAtis + " " + ucuncuAtis + " " + dorduncuAtis + " " + besinciAtis);
+                        float ortalama = (birinciAtis + ikinciAtis + ucuncuAtis) / 3f;
+                        Console.WriteLine(ortalama);
+                        if(ortalama > 15)
+                            Console.WriteLine("Buyuk hasar verdin");
+                        else if(ortalama > 10 && ortalama <= 15)        // ||
+                            Console.WriteLine("Orta hasar verdin");
+                        else if(ortalama > 5 && ortalama <= 10)
+                            Console.WriteLine("Hasar yok");
+                        else if(ortalama <= 5 && ortalama > 2)
+                            Console.WriteLine("Kendine hasar verdin");
+                        else
+                            Console.WriteLine("2'den kucuk oldugunda calisir");
+                        if(ortalama >= 10)
+                        {
+                            Console.WriteLine("Ortalama 10'un uzerinde");
+                            if(birinciAtis > 12)
+                            {
+                                Console.WriteLine("Birinci atis 12'nin uzerinde");
+                                if(ikinciAtis > 15)
+                                    Console.WriteLine("Nested if ornegi");
+                                else if(ikinciAtis > 12)
+                                    Console.WriteLine("Ikinci 12'nin uzerinde");
+                            }
+                        }
+                        if(dorduncuAtis >= 18 || besinciAtis >= 18)     // True veya false > True|True veya true > True|False veya false > False
+                            Console.WriteLine("Ek hasar verdin");
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 15:
+                    {
+                        // Array|Foreach
+                        string[] siparisNo = new string[3]; // Memory
+                        siparisNo[0] = "INZ123";
+                        siparisNo[1] = "GOOGLE2";
+                        siparisNo[2] = "GOOGLE3";
+                        siparisNo[0] = "INZ345";        // Değişiklik
+                        Console.WriteLine(siparisNo[1]);
+                        string[] siparisNo1 = {"birincisiparis", "ikincisiparis", "ucuncusiparis"};
+                        Console.WriteLine(siparisNo1[2]);
+                        Console.WriteLine(siparisNo1.Length);
+                        int[] fiyat = {250,300,700};
+                        int toplamFiyat = 0;
+                        int say = 0;
+                        foreach (string siparis in siparisNo1)
+                        {
+                            Console.WriteLine(siparis); // 3 kere dönecek
+                        }
+                        foreach (var tekilFiyat in fiyat)
+                        {
+                            toplamFiyat += tekilFiyat;
+                            say++;
+                        }
+                        Console.WriteLine(toplamFiyat + " " + say);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 16:
+                    {
+                        // Bool|Conditional Operator
+                        Console.WriteLine("a" == "a");      // 2 tane string karşılaştırma
+                        Console.WriteLine("b" == "B");
+                        Console.WriteLine(1.2f == 1.3f);
+                        int sayi = 5;
+                        Console.WriteLine(1 != sayi);
+                        string isim = "Bora Sevim";
+                        Console.WriteLine(isim.Contains("Bor"));
+                        Console.WriteLine(sayi == 6 ? "Bora" : "Arda");
+                        Console.WriteLine(sayi >= 5 ? "Bora" : "Arda");
+                        Console.WriteLine(sayi >= 5 ? 1 : 2);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 17:
+                    {
+                        // Local ve Global
+                        int sayi = 5;
+                        int sayi2 = 0;
+                        if (sayi == 5)
+                        {
+                            sayi2 = 20;
+                        }
+                        Console.WriteLine(sayi2);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 18:
+                    {
+                        // Code Blocks
+                        int sayi = 0;
+                        sayi = Toplama.Toplam(50);
+                        Console.WriteLine(sayi);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 19:
+                    {
+                        // Switch Case
+                        int golsayisi = 0;
+                        string takimSeviyesi = "";
+                        Random sayi = new Random();
+                        golsayisi = sayi.Next(0,6); // 0 ve 5 arası sayılar gelebilir
+                        switch(golsayisi)
+                        {
+                            case 1:
+                                takimSeviyesi = "OK";
+                                break;
+                            case 2:
+                                takimSeviyesi = "Guzel";
+                                break;
+                            case 3:
+                                takimSeviyesi = "Yuksek";
+                                break;
+                            case 4:
+                                takimSeviyesi = "Muhtesem";
+                                break;
+                            case 5:
+                                takimSeviyesi = "WOW";
+                                break;
+                            default:
+                                takimSeviyesi = "Kotu";
+                                break;
+                        }
+                        Console.WriteLine(takimSeviyesi);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 20:
+                    {
+                        // For Loop
+                        for(int i = 0; i < 10; i++)
+                        {
+                            Console.WriteLine(i);
+                        }
+                        for(int i = 10; i > 0; i--)
+                        {
+                            Console.WriteLine(i);
+                        }
+                        string[] siparisNo = 
+                        {
+                            "INZ001", 
+                            "GGLE01", 
+                            "APP01"
+                        };
+                        for(int i = siparisNo.Length; i > 0; i--)
+                        {
+                            Console.WriteLine(siparisNo[i-1]);
+                        }
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    case 21:
+                    {
+                        // Do While- While
+                        int sayi = 0;
+                        do
+                        {
+                            sayi++;
+                            if(sayi == 7) continue;
+                            Console.WriteLine(sayi);
+                        }while(sayi < 10);
+                        sayi = 0;
+                        while(sayi < 10)
+                        {
+                            sayi++;
+                            if(sayi == 7) continue;
+                            Console.WriteLine(sayi);
+                        }
+                        Console.ReadLine();
                         break;
                     }
 
@@ -291,6 +490,18 @@ namespace GoogleApp{
             {
                 return birinci + ikinci;
             }
+        }
+    }
+}
+
+namespace GoogleApp.Topla
+{
+    class Toplama
+    {
+        public static int Toplam(int a)
+        {
+            int b = 10;
+            return a + b;
         }
     }
 }

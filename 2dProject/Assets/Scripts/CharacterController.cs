@@ -2,32 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class characterController : MonoBehaviour
 {
-    public float speed = 0.0f;
+    public float speed = 1.0f;
     private Rigidbody2D r2d;
     private Animator _animator;
+    private Vector3 charPos;
+    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject _camera;
+    private int sayi;
 
     void Start()
     {
-        r2d = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();   // caching spriterenderer
+        r2d = GetComponent<Rigidbody2D>();                  // caching r2d
+        _animator = GetComponent<Animator>();               // caching anim
+        charPos = transform.position;
+        sayi = 1;
     }
 
-    void Update()
+    void FixedUpdate() // 50 fps
     {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            speed = 1.0f;
-            Debug.Log("Hiz 1.0f");
-        }
+        
+        // r2d.velocity = new Vector2(speed,0f);
+        sayi = 2;
+    }
+    void Update() // per frame
+    {  
+        charPos = new Vector3(charPos.x + Input.GetAxis("Horizontal") * speed * Time.deltaTime, charPos.y);
+        transform.position = charPos; // Hesaplanan pozisyon karaktere işlenir
+        if(Input.GetAxis("Horizontal") == 0.0f)
+            _animator.SetFloat("speed", 0.0f);
         else
-        {
-            speed = 0.0f;
-            Debug.Log("Hiz 0.0f");
-        }
-        _animator.SetFloat("speed",speed);
-        r2d.velocity = new Vector2(speed,0f);
+            _animator.SetFloat("speed",1.0f);
+        if(Input.GetAxis("Horizontal") > 0.01f)
+            _spriteRenderer.flipX = false;
+        else if(Input.GetAxis("Horizontal") < -0.01f)
+            _spriteRenderer.flipX = true;
+        sayi = 3;
+        Debug.Log("Update" + sayi);
+    }
+
+    void LateUpdate()
+    {
+        _camera.transform.position = new Vector3(charPos.x, charPos.y, charPos.z - 1.0f);
+        sayi = 4;
     }
     
 }

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerPoints : MonoBehaviour
 {
-    public int score = 0;
+    [SerializeField] private TextMeshProUGUI _text;
     private AudioSource _audio;
 
     private void Awake()
     {
         _audio = gameObject.GetComponent<AudioSource>();
+        _text.text = score.totalScore.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +20,8 @@ public class PlayerPoints : MonoBehaviour
         {
             _audio.Play();
             Destroy(other.gameObject);
-            score++;
+            score.totalScore++;
+            _text.text = score.totalScore.ToString();
         }
     }
 }

@@ -17,7 +17,9 @@ public class Engel : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            score.lives--;
             SceneManager.LoadScene(_scene.name);
+
         }
     }
 }

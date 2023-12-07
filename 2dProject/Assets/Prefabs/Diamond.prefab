@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8245451694384189894}
   - component: {fileID: 1510922518766181573}
   - component: {fileID: 1230968208904029013}
+  - component: {fileID: 1923198305019470792}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Elmas
@@ -139,3 +140,24 @@ PolygonCollider2D:
       - {x: 0.38, y: 0.11}
       - {x: 0.19694853, y: 0.29999998}
   m_UseDelaunayMesh: 0
+--- !u!95 &1923198305019470792
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041833266466918700}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3f0a19f041b0084ea8365ef534a28b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

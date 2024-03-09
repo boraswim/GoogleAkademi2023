@@ -57,12 +57,12 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: Chrome
-    Event: 300
+    Event: 1000
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 8
+        m_Bits: 256
       PassNames: []
     overrideMaterial: {fileID: 2100000, guid: 556a1636c595b3f4d8fe9d1dabf81a25, type: 2}
     overrideMaterialPassIndex: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     overrideShaderPassIndex: 0
     overrideMode: 1
     overrideDepthState: 1
-    depthCompareFunction: 6
+    depthCompareFunction: 3
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
